@@ -28,6 +28,7 @@ if (!$localizeFn.TRANSLATION_BY_LOCALE) {
   Object.defineProperty($localize, "TRANSLATIONS", {
     get: function () {
       const locale = getLocale();
+      // const locale = "fr";
       let translations = $localizeFn.TRANSLATION_BY_LOCALE.get(locale);
       if (!translations) {
         $localizeFn.TRANSLATION_BY_LOCALE.set(locale, (translations = {}));
@@ -71,6 +72,8 @@ export function extractLang(
       }
     }
   }
+
+  console.log(locale);
   return locale || "";
 }
 
